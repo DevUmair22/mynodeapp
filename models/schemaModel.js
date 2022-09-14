@@ -1,13 +1,18 @@
 const mongoose=require('mongoose');
 const PostSchema=mongoose.Schema({
+    iD:{
+        type: String,
+        required:true
+    },
+    
     firstName:{
-type: String,
-required:true
+        type: String,
+        required:true
     },
     
     secondName:{
-type:String,
-required:true
+        type:String,
+        required:true
     },
     
     email:
