@@ -4,7 +4,7 @@ const mongoose = require ('mongoose');
 const path =require('path');
 require('dotenv/config');
 // const router = express.Router();
-const port =  8080;
+const port =  8080||process.env.port;
  const Post= require('./models/schemaModel');
 
 
@@ -47,10 +47,10 @@ app.get('/:22', async(req,res)=>
     }
 })
 
-app.delete('/:id', async (req,res)=>
+app.delete('/:name', async (req,res)=>
 {
     try{
-        const removedPost= await Post.deleteMany({firstName:req.params.id});
+        const removedPost= await Post.deleteMany({firstName:req.params.name});
         res.json(removedPost);
     }catch(err)
     {
